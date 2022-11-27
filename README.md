@@ -1,3 +1,5 @@
+[![Run tests](https://github.com/Laravel-Myanmar-Tools/phone-number/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/Laravel-Myanmar-Tools/phone-number/actions/workflows/run-tests.yml)
+
 # Phone Number
 
 Credit: [Original script (PHP)](https://github.com/johnreginald/myanmar-phone-number-php) [Original script (JS)](https://github.com/kaungmyatlwin/myanmar-phonenumber)
@@ -116,5 +118,5 @@ $phoneNumber->isAtom('09790000000'); // return true
 ## Testing
 
 ```bash
-./vendor/bin/pest
+composer test
 ```
