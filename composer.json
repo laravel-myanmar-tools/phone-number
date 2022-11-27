@@ -1,16 +1,16 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "laravel-myanmar-tools/phone-number",
+    "description": "Myanmar Phone Number For PHP",
     "keywords": [
-        ":vendor_name",
-        ":package_slug"
+        "laravel-myanmar-tools",
+        "myanmar-phone-number"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/laravel-myanmar-tools/phone-number",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Pyae Sone Aung",
+            "email": "pyaesoneaungrgn@gmail.com",
             "role": "Developer"
         }
     ],
@@ -24,12 +24,12 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src"
+            "LaravelMyanmarTools\\PhoneNumber\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "LaravelMyanmarTools\\PhoneNumber\\Tests\\": "tests"
         }
     },
     "scripts": {
