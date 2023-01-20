@@ -122,3 +122,8 @@ $phoneNumber->isAtom('09790000000'); // return true
 ```bash
 composer test
 ```
+
+## Credit
+
+-[ToUnicode (Laravel Easy Converter)](https://github.com/KyawNaingTun/tounicode)
+-[Rabbit-PHP](https://github.com/Rabbit-Converter/Rabbit-PHP)
