@@ -2,6 +2,8 @@
 
 # Phone Number
 
+PHP Myanmar Phone Number for [Laravel Myanmar Tools](https://laravel-myanmar-tools.com)
+
 Credit: [Original script (PHP)](https://github.com/johnreginald/myanmar-phone-number-php) [Original script (JS)](https://github.com/kaungmyatlwin/myanmar-phonenumber)
 
 ## Installation
