@@ -2,9 +2,11 @@
 
 namespace LaravelMyanmarTools\PhoneNumber\Concerns;
 
+use LaravelMyanmarTools\PhoneNumber\Exceptions\InvalidMyanmarPhoneNumber;
+
 trait CanNormalize
 {
-    public function normalize(string $phone): string
+    public function normalize(string $phone, string $prefix = '09'): string
     {
         // replace myanmar to english
         $myanmar = ['၀', '၁', '၂', '၃', '၄', '၅', '၆', '၇', '၈', '၉', 'ဝ', 'ရ'];
@@ -23,7 +25,7 @@ trait CanNormalize
         );
 
         // clean doule country code
-        $replacer = '+959'.preg_replace(
+        $replacer = '+959' . preg_replace(
             pattern: '/^\+?95959/',
             replacement: '',
             subject: $phone
@@ -46,9 +48,11 @@ trait CanNormalize
             subject: $phone
         );
 
-        if (! $this->isMyanmarPhoneNumber($phone)) {
+        if (!$this->isMyanmarPhoneNumber($phone)) {
             throw new InvalidMyanmarPhoneNumber('Invalid myanmar phone number!');
         }
+
+        $phone = preg_replace('/^\+?959|09/', $prefix, $phone);
 
         return $phone;
     }

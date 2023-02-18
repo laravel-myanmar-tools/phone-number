@@ -101,6 +101,8 @@ $phoneNumber->normalize('09250000000'); // return "09250000000"
 $phoneNumber->normalize('(၀၉)၂၅၀၀၀၀၀၀၀'); // return "09250000000"
 $phoneNumber->normalize('၀၉-၂၅၀၀၀၀၀၀၀'); // return "09250000000"
 $phoneNumber->normalize('09-၂၅ဝရဝရဝရဝ'); // return "09250000000"
+
+$phoneNumber->normalize('09250000000', '+959'); // return "+959250000000"
 ```
 
 ## Customize
