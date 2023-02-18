@@ -25,7 +25,7 @@ trait CanNormalize
         );
 
         // clean doule country code
-        $replacer = '+959' . preg_replace(
+        $replacer = '+959'.preg_replace(
             pattern: '/^\+?95959/',
             replacement: '',
             subject: $phone
@@ -48,7 +48,7 @@ trait CanNormalize
             subject: $phone
         );
 
-        if (!$this->isMyanmarPhoneNumber($phone)) {
+        if (! $this->isMyanmarPhoneNumber($phone)) {
             throw new InvalidMyanmarPhoneNumber('Invalid myanmar phone number!');
         }
 
