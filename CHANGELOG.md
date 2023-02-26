@@ -2,6 +2,18 @@
 
 All notable changes to `phone-number` will be documented in this file.
 
+## v1.1.0 - 2023-02-26
+
+add extract feature
+
+```php
+use LaravelMyanmarTools\PhoneNumber\PhoneNumber;
+
+$phoneNumber = new PhoneNumber;
+$phoneNumber->extractMyanmarPhoneNumber('မောင်မောင်ရဲ့ ဖုန်းနံပါတ်များမှာ ၀၉၂၅၀၀၀၀၀၀၀ နှင့် ၀၉၉၇၀၀၀၀၀၀၀ တို့ဖြစ်ပါသည်။'); 
+// return ["09250000000", "09970000000"]
+
+```
 ## v1.0.1 - 2023-02-18
 
 ### What's Changed
