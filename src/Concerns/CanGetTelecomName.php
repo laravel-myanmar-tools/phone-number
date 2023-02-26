@@ -4,32 +4,34 @@ namespace LaravelMyanmarTools\PhoneNumber\Concerns;
 
 use LaravelMyanmarTools\PhoneNumber\Enums\Telecom;
 use LaravelMyanmarTools\PhoneNumber\Exceptions\InvalidMyanmarPhoneNumber;
+use LaravelMyanmarTools\PhoneNumber\Services\RegexService;
 
 trait CanGetTelecomName
 {
     public function getTelecom(string $phone): string
     {
-        if (! $this->isMyanmarPhoneNumber($phone)) {
+        $regexService = new RegexService(str: $phone);
+        if (! $regexService->isMyanmarPhoneNumber()) {
             throw new InvalidMyanmarPhoneNumber('Invalid myanmar phone number!');
         }
 
-        if ($this->isMpt(phone: $phone)) {
+        if ($regexService->isMpt()) {
             return Telecom::MPT->getValue();
         }
 
-        if ($this->isOoredoo(phone: $phone)) {
+        if ($regexService->isOoredoo()) {
             return Telecom::OOREDOO->getValue();
         }
 
-        if ($this->isTelenor(phone: $phone)) {
+        if ($regexService->isTelenor()) {
             return Telecom::TELENOR->getValue();
         }
 
-        if ($this->isMec(phone: $phone)) {
+        if ($regexService->isMec()) {
             return Telecom::MEC->getValue();
         }
 
-        if ($this->isMytel(phone: $phone)) {
+        if ($regexService->isMytel()) {
             return Telecom::MYTEL->getValue();
         }
 

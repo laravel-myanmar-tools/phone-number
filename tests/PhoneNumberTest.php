@@ -49,3 +49,35 @@ it('can get telecom', function () {
 it('can get network type', function () {
     expect(phoneNumber()->getNetworkType(phone: '09250000000'))->toBe(Network::GSM->getValue());
 });
+
+it('can get extract myanmar phone number', function () {
+    expect(phoneNumber()->extractMyanmarPhoneNumber(str: 'မောင်မောင်ရဲ့ ဖုန်းနံပါတ်များမှာ ၀၉၂၅၀၀၀၀၀၀၀ နှင့် ၀၉၉၇၀၀၀၀၀၀၀ တို့ဖြစ်ပါသည်။'))
+        ->toBe(['09250000000', '09970000000']);
+    expect(phoneNumber()->extractMyanmarPhoneNumber(str: ''))
+        ->toBe([]);
+});
+
+it('can get extract mpt', function () {
+    expect(phoneNumber()->extractMpt(str: 'မောင်မောင်ရဲ့ ဖုန်းနံပါတ်မှာ 09250000000 ဖြစ်ပါသည်။'))
+        ->toBe(['09250000000']);
+});
+
+it('can get extract ooredoo', function () {
+    expect(phoneNumber()->extractOoredoo(str: 'မောင်မောင်ရဲ့ ဖုန်းနံပါတ်မှာ 09970000000 ဖြစ်ပါသည်။'))
+        ->toBe(['09970000000']);
+});
+
+it('can get extract telenor', function () {
+    expect(phoneNumber()->extractTelenor(str: 'မောင်မောင်ရဲ့ ဖုန်းနံပါတ်မှာ 09790000000 ဖြစ်ပါသည်။'))
+        ->toBe(['09790000000']);
+});
+
+it('can get extract mec', function () {
+    expect(phoneNumber()->extractMec(str: 'မောင်မောင်ရဲ့ ဖုန်းနံပါတ်မှာ 0930000000 ဖြစ်ပါသည်။'))
+        ->toBe(['0930000000']);
+});
+
+it('can get extract mytel', function () {
+    expect(phoneNumber()->extractMytel(str: 'မောင်မောင်ရဲ့ ဖုန်းနံပါတ်မှာ 09690000000 ဖြစ်ပါသည်။'))
+        ->toBe(['09690000000']);
+});

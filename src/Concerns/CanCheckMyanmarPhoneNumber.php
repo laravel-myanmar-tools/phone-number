@@ -2,17 +2,12 @@
 
 namespace LaravelMyanmarTools\PhoneNumber\Concerns;
 
-use LaravelMyanmarTools\PhoneNumber\Enums\Telecom;
+use LaravelMyanmarTools\PhoneNumber\Services\RegexService;
 
 trait CanCheckMyanmarPhoneNumber
 {
     public function isMyanmarPhoneNumber(string $phone): bool
     {
-        return boolval(
-            value: preg_match(
-                pattern: Telecom::ALL->getRegex(),
-                subject: $phone
-            )
-        );
+        return (new RegexService(str: $phone))->isMyanmarPhoneNumber();
     }
 }
