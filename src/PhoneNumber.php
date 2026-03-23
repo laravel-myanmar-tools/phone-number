@@ -21,20 +21,20 @@ use Spatie\Macroable\Macroable;
 
 class PhoneNumber
 {
-    use CanCheckMyanmarPhoneNumber;
+    use CanCheckMec;
     use CanCheckMpt;
+    use CanCheckMyanmarPhoneNumber;
+    use CanCheckMytel;
     use CanCheckOoredoo;
     use CanCheckTelenor;
-    use CanCheckMec;
-    use CanCheckMytel;
+    use CanExtractMec;
+    use CanExtractMpt;
+    use CanExtractMyanmarPhoneNumber;
+    use CanExtractMytel;
+    use CanExtractOoredoo;
+    use CanExtractTelenor;
     use CanGetNetworkType;
     use CanGetTelecomName;
     use CanNormalize;
-    use CanExtractMyanmarPhoneNumber;
-    use CanExtractMpt;
-    use CanExtractOoredoo;
-    use CanExtractTelenor;
-    use CanExtractMec;
-    use CanExtractMytel;
     use Macroable;
 }

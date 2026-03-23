@@ -4,6 +4,4 @@ namespace LaravelMyanmarTools\PhoneNumber\Exceptions;
 
 use Exception;
 
-class InvalidMyanmarPhoneNumber extends Exception
-{
-}
+class InvalidMyanmarPhoneNumber extends Exception {}

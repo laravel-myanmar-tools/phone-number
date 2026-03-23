@@ -6,8 +6,7 @@ class NormalizerService
 {
     public function __construct(
         public string $str
-    ) {
-    }
+    ) {}
 
     public function normalize(): string
     {
