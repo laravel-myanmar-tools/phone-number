@@ -16,6 +16,6 @@ trait CanNormalize
             throw new InvalidMyanmarPhoneNumber('Invalid myanmar phone number!');
         }
 
-        return preg_replace('/^\+?959|09/', $prefix, $phone);
+        return preg_replace('/^(?:\+?959|09)/', $prefix, $phone);
     }
 }
