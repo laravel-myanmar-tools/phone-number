@@ -9,8 +9,7 @@ class RegexService
 {
     public function __construct(
         public string $str
-    ) {
-    }
+    ) {}
 
     public function isMyanmarPhoneNumber(): bool
     {
